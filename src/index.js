@@ -1,15 +1,27 @@
+const Notifier = require('node-notifier');
 const { positions } = require('./assets.json');
-const axios = require('axios');
+const { alerts } = require('./alerts.json');
 const Promise = require('bluebird');
+const axios = require('axios');
 
-async function getCryptoData({ currency, amount }) {
+async function getCryptoData({ currency, quantity }) {
   const { data } = await axios.get(
     `https://api.coingecko.com/api/v3/coins/markets?vs_currency=brl&ids=${currency}`
   );
 
   const price = data[0].current_price;
+  const amount = price * quantity;
 
-  return `${currency}: R$ ${Number((price * amount).toFixed(2))}`;
+  const alert = alerts.find((alert) => alert.currency === currency);
+
+  if (amount >= alert?.target) {
+    Notifier.notify({
+      title: `Tá na hora de vender seus ${currency} fi`,
+      body: `Preço: ${price}\nQuanto tu tem: ${amount}`,
+    });
+  }
+
+  return `${currency}: R$ ${Number(amount.toFixed(2))}`;
 }
 
 setInterval(async () => {
