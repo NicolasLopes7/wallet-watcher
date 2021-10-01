@@ -1,0 +1,12 @@
+{
+  "positions": [
+    { "currency": "bitcoin", "amount": 0.00709761 },
+    { "currency": "ethereum", "amount": 0.0624272 },
+    { "currency": "cardano", "amount": 81.68111129 },
+    { "currency": "sushi", "amount": 8.37 },
+    { "currency": "avalanche", "amount": 0.00172585 },
+    { "currency": "solana", "amount": 0.00145957 },
+    { "currency": "fantom", "amount": 0.00152216 },
+    { "currency": "populous", "amount": 21.699 }
+  ]
+}
