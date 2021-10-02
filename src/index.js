@@ -14,10 +14,18 @@ async function getCryptoData({ currency, quantity }) {
 
   const alert = alerts.find((alert) => alert.currency === currency);
 
-  if (amount >= alert?.target) {
+  const defaultTitle = `Tá na hora de vender seus ${currency} fi`;
+  const defaultBody = `Preço: ${price}\nQuanto tu tem: ${amount}`;
+
+  if (amount >= alert?.targetMAX) {
     Notifier.notify({
-      title: `Tá na hora de vender seus ${currency} fi`,
-      body: `Preço: ${price}\nQuanto tu tem: ${amount}`,
+      title: defaultTitle,
+      body: `++ Em alta. ${defaultBody}`,
+    });
+  } else if (amount <= alert?.targetMIN) {
+    Notifier.notify({
+      title: defaultTitle,
+      body: `-- Em queda. ${defaultBody}`,
     });
   }
 

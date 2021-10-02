@@ -1,3 +1,3 @@
 {
-  "alerts": [{ "currency": "bitcoin", "target": 2000 }]
+  "alerts": [{ "currency": "bitcoin", "targetMAX": 2000, "targetMIN": 1000 }]
 }
