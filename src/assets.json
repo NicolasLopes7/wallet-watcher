@@ -1,12 +1,9 @@
 {
   "positions": [
-    { "currency": "bitcoin", "quantity": 0.00709761 },
-    { "currency": "ethereum", "quantity": 0.07050585 },
-    { "currency": "cardano", "quantity": 81.68111129 },
-    { "currency": "sushi", "quantity": 8.37 },
-    { "currency": "avalanche-2", "quantity": 1.21308057 },
-    { "currency": "solana", "quantity": 0.44 },
-    { "currency": "fantom", "quantity": 53.0 },
-    { "currency": "populous", "quantity": 21.699 }
+    { "currency": "cardano", "quantity": 81.68111129, "provider": "coingecko" },
+    { "currency": "sushi", "quantity": 8.37, "provider": "coingecko" },
+    { "currency": "avalanche-2", "quantity": 1.21308057, "provider": "coingecko" },
+    { "currency": "populous", "quantity": 21.699, "provider": "coingecko" },
+    { "currency": "0x727b531038198e27a1a4d0fd83e1693c1da94892", "quantity": 20, "provider": "poocoin" }
   ]
 }
